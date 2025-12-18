@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphiZone - الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <div class="logo">🎨</div>
+                    <div class="logo-text">GraphiZone</div>
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="packages.html">الباقات</a></li>
+                <li><a href="portfolio.html">المعرض</a></li>
+                <li><a href="#how-it-works">كيفية العمل</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="auth-buttons">
+                <div class="user-welcome" id="userWelcome">
+                    مرحباً <span id="usernameDisplay"></span>
+                   <button class="btn btn-outline" onclick="showLoginModal()" id="loginBtn">تسجيل الدخول</button>
+               
+                <button class="btn btn-primary" onclick="showRegisterModal()" id="registerBtn">إنشاء حساب</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم الهيرو -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>مرحباً بكم في <span style="color: #ffd700;">GraphiZone</span></h1>
+            <p>منصة عربية متخصصة تربطك بمصممين جرافيك محترفين لتحقيق رؤيتك الإبداعية</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="showRegisterModal()">
+                    <i class="fas fa-rocket"></i> ابدأ مشروعك الآن
+                </button>
+                <a href="packages.html" class="btn btn-outline">
+                    <i class="fas fa-gem"></i> استعرض الباقات
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section class="services" id="services">
+        <h2 class="section-title">خدماتنا</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>تصميم الشعارات</h3>
+                <p>تصميم شعارات احترافية تعبر عن هوية علامتك التجارية</p>
+                <a href="packages.html#logos" class="service-link">عرض الباقات <i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>تصميم وسائل التواصل</h3>
+                <p>تصاميم جذابة لمنصات التواصل الاجتماعي</p>
+                <a href="packages.html#social" class="service-link">عرض الباقات <i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3>الهوية البصرية</h3>
+                <p>حزم متكاملة للهوية البصرية لشركتك</p>
+                <a href="packages.html#identity" class="service-link">عرض الباقات <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الباقات السريع -->
+    <section class="packages-preview">
+        <h2 class="section-title">باقات التصميم</h2>
+        <p class="section-subtitle">اختر الباقة المناسبة لمشروعك</p>
+        
+        <div class="packages-grid">
+            <div class="package-card package-basic">
+                <div class="package-header">
+                    <h3>الباقة الأساسية</h3>
+                    <p>مناسبة للأفراد والشركات الناشئة</p>
+                </div>
+                <div class="package-body">
+                    <div class="package-price">1,499 ريال</div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> تصميم شعار احترافي</li>
+                        <li><i class="fas fa-check"></i> 3 مراجعات وتعديلات</li>
+                        <li><i class="fas fa-check"></i> تسليم خلال 5 أيام</li>
+                    </ul>
+                    <a href="packages.html#basic" class="btn btn-primary">تفاصيل الباقة</a>
+                </div>
+            </div>
+            
+            <div class="package-card package-pro">
+                <div class="package-header">
+                    <h3>الباقة المتقدمة</h3>
+                    <p>الأنسب للشركات المتوسطة</p>
+                </div>
+                <div class="package-body">
+                    <div class="package-price">2,999 ريال</div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> تصميم شعار + هوية بصرية</li>
+                        <li><i class="fas fa-check"></i> تصميم 5 بوستات</li>
+                        <li><i class="fas fa-check"></i> تسليم خلال 7 أيام</li>
+                    </ul>
+                    <a href="packages.html#pro" class="btn btn-primary">تفاصيل الباقة</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="packages.html" class="btn btn-secondary">
+                <i class="fas fa-eye"></i> عرض جميع الباقات
+            </a>
+        </div>
+    </section>
+
+    <!-- قسم كيفية العمل -->
+    <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">كيف تعمل منصتنا؟</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>انشر مشروعك</h3>
+                <p>صف مشروعك وحدد الميزانية</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>اختر المصمم</h3>
+                <p>اطلع على عروض المصممين</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>تابع المشروع</h3>
+                <p>تواصل مباشرة مع المصمم</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>استلم التصميم</h3>
+                <p>استلم التصميم النهائي</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التسجيل -->
+    <section class="registration" id="register">
+        <h2 class="section-title">انضم إلينا</h2>
+        <p>اختر دورك وابدأ رحلتك الإبداعية</p>
+
+        <div class="role-selection">
+            <div class="role-card" onclick="showRegisterModal()">
+                <div class="role-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>عميل</h3>
+                <p>ابحث عن مصمم لمشروعك</p>
+                <button class="btn btn-primary">سجل كعميل</button>
+            </div>
+            
+            <div class="role-card" onclick="showRegisterModal()">
+                <div class="role-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>مصمم</h3>
+                <p>اعرض مهاراتك وابحث عن مشاريع</p>
+                <button class="btn btn-primary">سجل كمصمم</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GraphiZone</h3>
+                <p>منصة عربية متخصصة في ربط العملاء بالمصممين</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="packages.html">الباقات</a></li>
+                    <li><a href="portfolio.html">المعرض</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p><i class="fas fa-envelope"></i> info@graphizone.com</p>
+                <p><i class="fas fa-phone"></i> +966 123 456 789</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>©️ 2025 GraphiZone. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- نافذة تسجيل الدخول -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            
+            <!-- نموذج تسجيل الدخول -->
+            <div class="login-form" id="loginForm">
+                <h2 class="form-title">تسجيل الدخول</h2>
+                <form id="loginFormData" onsubmit="login(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">البريد الإلكتروني</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">كلمة المرور</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">تسجيل الدخول</button>
+                    <div class="error-message" id="loginError">البريد الإلكتروني أو كلمة المرور غير صحيحة</div>
+                </form>
+                <div class="form-switch">
+                    ليس لديك حساب؟ <a onclick="showRegister()">إنشاء حساب جديد</a>
+                </div>
+            </div>
+            
+            <!-- نموذج إنشاء حساب -->
+            <div class="register-form" id="registerForm">
+                <h2 class="form-title">إنشاء حساب جديد</h2>
+                <form id="registerFormData" onsubmit="register(event)">
+                    <div class="form-group">
+                        <label for="registerName">الاسم الكامل</label>
+                        <input type="text" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">البريد الإلكتروني</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">كلمة المرور</label>
+                        <input type="password" id="registerPassword" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">إنشاء الحساب</button>
+                    <div class="error-message" id="registerError">حدث خطأ. يرجى المحاولة مرة أخرى</div>
+                    <div class="success-message" id="registerSuccess">تم إنشاء الحساب بنجاح!</div>
+                </form>
+                <div class="form-switch">
+                    لديك حساب بالفعل؟ <a onclick="showLogin()">تسجيل الدخول</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jsmain.js"></script>
+</body>
+</html>

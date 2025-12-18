@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باقات التصميم - GraphiZone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="https://i.ibb.co/S7WNsj3F/logo1.png" alt="GraphiZone Logo" style="width: 50px; height: auto;" />
+                    <div class="logo-text">GraphiZone</div>
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="packages.html" class="active">الباقات</a></li>
+                <li><a href="portfolio.html">المعرض</a></li>
+                <li><a href="index.html#how-it-works">كيفية العمل</a></li>
+                <li><a href="index.html#contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="auth-buttons">
+                <div class="user-welcome" id="userWelcome">
+                    مرحباً <span id="usernameDisplay"></span>
+                    <button class="btn btn-secondary" onclick="logout()">تسجيل الخروج</button>
+                </div>
+                <button class="btn btn-outline" onclick="showLoginModal()" id="loginBtn">تسجيل الدخول</button>
+                <button class="btn btn-primary" onclick="showRegisterModal()" id="registerBtn">إنشاء حساب</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- هيدر صفحة الباقات -->
+    <section class="page-header">
+        <div class="container">
+            <h1>باقات التصميم المتاحة</h1>
+            <p>اختر الباقة المناسبة لمشروعك من بين مجموعة متنوعة من الحلول المصممة خصيصاً لاحتياجاتك</p>
+        </div>
+    </section>
+
+    <!-- فئات الباقات -->
+    <section class="package-categories" id="categories">
+        <div class="container">
+            <div class="categories-tabs">
+                <button class="category-tab active" onclick="filterPackages('all')">
+                    <i class="fas fa-layer-group"></i> جميع الباقات
+                </button>
+                <button class="category-tab" onclick="filterPackages('logos')" id="logos">
+                    <i class="fas fa-pen-nib"></i> تصميم الشعارات
+                </button>
+                <button class="category-tab" onclick="filterPackages('social')" id="social">
+                    <i class="fas fa-hashtag"></i> وسائل التواصل
+                </button>
+                <button class="category-tab" onclick="filterPackages('identity')" id="identity">
+                    <i class="fas fa-palette"></i> الهوية البصرية
+                </button>
+                <button class="category-tab" onclick="filterPackages('branding')" id="branding">
+                    <i class="fas fa-crown"></i> براندنغ متكامل
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الباقات الرئيسي -->
+    <section class="packages-main">
+        <div class="container">
+            <!-- باقات تصميم الشعارات -->
+            <div class="package-category-section" id="logos-section">
+                <h2 class="category-title">باقات تصميم الشعارات</h2>
+                <p class="category-description">احصل على شعار احترافي يعبر عن هوية علامتك التجارية</p>
+                
+                <div class="packages-grid">
+                    <!-- الباقة الأساسية -->
+                    <div class="package-card package-basic" id="basic">
+                        <div class="package-badge">الأكثر طلباً</div>
+                        <div class="package-header">
+                            <h3>الباقة الأساسية</h3>
+                            <p>شعار احترافي بسيط</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="package-price">
+                                <span class="price">1,499 ريال</span>
+                                <span class="period">للمشروع الواحد</span>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> تصميم 3 مفاهيم للشعار</li>
+                                <li><i class="fas fa-check"></i> 3 مراجعات وتعديلات</li>
+                                <li><i class="fas fa-check"></i> ملفات بصيغة PNG, JPEG</li>
+                                <li><i class="fas fa-check"></i> تسليم خلال 3-5 أيام</li>
+                                <li><i class="fas fa-check"></i> دعم فني لمدة أسبوع</li>
+                                <li><i class="fas fa-times"></i> <span class="not-included">الملفات المتجهية</span></li>
+                                <li><i class="fas fa-times"></i> <span class="not-included">دليل الاستخدام</span></li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="selectPackage('الباقة الأساسية', 1499)">
+                                <i class="fas fa-shopping-cart"></i> اختر الباقة
+                            </button>
+                            <a href="#" class="package-link">تفاصيل الباقة <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- الباقة المتقدمة -->
+                    <div class="package-card package-pro" id="pro">
+                        <div class="package-badge">الأفضل قيمة</div>
+                        <div class="package-header">
+                            <h3>الباقة المتقدمة</h3>
+                            <p>شعار متكامل مع هوية مصغرة</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="package-price">
+                                <span class="price">2,499 ريال</span>
+                                <span class="period">للمشروع الواحد</span>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> تصميم 5 مفاهيم للشعار</li>
+                                <li><i class="fas fa-check"></i> 5 مراجعات وتعديلات</li>
+                                <li><i class="fas fa-check"></i> جميع صيغ الملفات (PNG, JPEG, PDF)</li>
+                                <li><i class="fas fa-check"></i> الملفات المتجهية (AI, EPS)</li>
+                                <li><i class="fas fa-check"></i> تسليم خلال 5-7 أيام</li>
+                                <li><i class="fas fa-check"></i> دعم فني لمدة شهر</li>
+                                <li><i class="fas fa-check"></i> دليل ألوان الشعار</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="selectPackage('الباقة المتقدمة', 2499)">
+                                <i class="fas fa-shopping-cart"></i> اختر الباقة
+                            </button>
+                            <a href="#" class="package-link">تفاصيل الباقة <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- الباقة المميزة -->
+                    <div class="package-card package-premium">
+                        <div class="package-header">
+                            <h3>الباقة المميزة</h3>
+                            <p>حل شعار متكامل</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="package-price">
+                                <span class="price">3,999 ريال</span>
+                                <span class="period">للمشروع الواحد</span>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> تصميم 7 مفاهيم للشعار</li>
+                                <li><i class="fas fa-check"></i> مراجعات وتعديلات غير محدودة</li>
+                                <li><i class="fas fa-check"></i> جميع صيغ الملفات المتاحة</li>
+                                <li><i class="fas fa-check"></i> الملفات المصدرية كاملة</li>
+                                <li><i class="fas fa-check"></i> تسليم خلال 7-10 أيام</li>
+                                <li><i class="fas fa-check"></i> دعم فني لمدة 3 أشهر</li>
+                                <li><i class="fas fa-check"></i> دليل استخدام كامل</li>
+                                <li><i class="fas fa-check"></i> تصميم أيقونة للشعار</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="selectPackage('الباقة المميزة', 3999)">
+                                <i class="fas fa-shopping-cart"></i> اختر الباقة
+                            </button>
+                            <a href="#" class="package-link">تفاصيل الباقة <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- باقات وسائل التواصل -->
+            <div class="package-category-section" id="social-section">
+                <h2 class="category-title">باقات وسائل التواصل الاجتماعي</h2>
+                <p class="category-description">تصاميم احترافية تزيد من تفاعل متابعيك</p>
+                
+                <div class="packages-grid">
+                    <!-- باقة البوستات الشهرية -->
+                    <div class="package-card">
+                        <div class="package-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <h3>باقة البوستات الشهرية</h3>
+                            <p>30 تصميم شهرياً</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="package-price">
+                                <span class="price">1,999 ريال</span>
+                                <span class="period">شهرياً</span>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> 30 تصميم شهرياً</li>
+                                <li><i class="fas fa-check"></i> تصميمات لجميع المنصات</li>
+                                <li><i class="fas fa-check"></i> 3 مراجعات لكل تصميم</li>
+                                <li><i class="fas fa-check"></i> محتوى مرئي وجرافيك</li>
+                                <li><i class="fas fa-check"></i> تسليم أسبوعي</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="selectPackage('باقة البوستات الشهرية', 1999)">
+                                اختر الباقة
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- باقة الستوريات -->
+                    <div class="package-card">
+                        <div class="package-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <h3>باقة الستوريات</h3>
+                            <p>15 ستوري أسبوعياً</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="package-price">
+                                <span class="price">2,499 ريال</span>
+                                <span class="period">أسبوعياً</span>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> 15 ستوري أسبوعياً</li>
+                                <li><i class="fas fa-check"></i> تصاميم متحركة</li>
+                                <li><i class="fas fa-check"></i> تصميمات تفاعلية</li>
+                                <li><i class="fas fa-check"></i> جاهزة للنشر المباشر</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="selectPackage('باقة الستوريات', 2499)">
+                                اختر الباقة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- باقات الهوية البصرية -->
+            <div class="package-category-section" id="identity-section">
+                <h2 class="category-title">باقات الهوية البصرية المتكاملة</h2>
+                <p class="category-description">هوية بصرية متكاملة لعلامتك التجارية</p>
+                
+                <div class="packages-grid">
+                    <!-- الباقة الكاملة -->
+                    <div class="package-card package-premium">
+                        <div class="package-badge">الأكثر شمولية</div>
+                        <div class="package-header">
+                            <h3>الباقة الكاملة</h3>
+                            <p>هوية بصرية متكاملة</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="package-price">
+                                <span class="price">6,999 ريال</span>
+                                <span class="period">حزمة متكاملة</span>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> تصميم شعار احترافي</li>
+                                <li><i class="fas fa-check"></i> دليل هوية بصرية كامل</li>
+                                <li><i class="fas fa-check"></i> تصميم بطاقة عمل</li>
+                                <li><i class="fas fa-check"></i> تصميم ورقة رسمية</li>
+                                <li><i class="fas fa-check"></i> تصميم بريد إلكتروني</li>
+                                <li><i class="fas fa-check"></i> حافظة ملفات ومجلدات</li>
+                                <li><i class="fas fa-check"></i> جميع الملفات المصدرية</li>
+                                <li><i class="fas fa-check"></i> تسليم خلال 10-14 يوم</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="selectPackage('الباقة الكاملة', 6999)">
+                                اختر الباقة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">أسئلة شائعة حول الباقات</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        كم مدة تسليم التصميم؟
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>مدة التسليم تختلف حسب الباقة المختارة:
+                        <br>- الباقات الأساسية: 3-5 أيام عمل
+                        <br>- الباقات المتقدمة: 5-7 أيام عمل
+                        <br>- الباقات المميزة: 7-10 أيام عمل</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        هل يمكنني طلب تعديلات بعد التسليم؟
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، كل باقة تحتوي على عدد محدد من المراجعات والتعديلات المجانية حسب الباقة المختارة. بعد انتهاء المراجعات المجانية، يمكن طلب تعديلات إضافية مقابل رسوم إضافية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ما هي صيغ الملفات التي سأحصل عليها؟
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>تحصل على جميع الصيغ اللازمة حسب الباقة المختارة. تشمل عادة: PNG، JPEG، PDF، وأحياناً الملفات المتجهية (AI، EPS) في الباقات المتقدمة والمميزة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم اتخاذ القرار -->
+    <section class="decision-section">
+        <div class="container">
+            <div class="decision-card">
+                <h2>مستعد لبدء مشروعك؟</h2>
+                <p>اختر الباقة المناسبة واحصل على تصميم احترافي يعبر عن هوية علامتك التجارية</p>
+                <div class="decision-buttons">
+                    <a href="index.html#register" class="btn btn-primary">إنشاء حساب جديد</a>
+                    <a href="index.html#contact" class="btn btn-outline">تواصل معنا للاستفسار</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GraphiZone</h3>
+                <p>منصة عربية متخصصة في ربط العملاء بالمصممين المحترفين</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="packages.html">الباقات</a></li>
+                    <li><a href="portfolio.html">المعرض</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p><i class="fas fa-envelope"></i> info@graphizone.com</p>
+                <p><i class="fas fa-phone"></i> +966 123 456 789</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>©️ 2025 GraphiZone. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- نافذة اختيار الباقة -->
+    <div class="modal" id="packageModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePackageModal()">×</span>
+            <div class="package-modal-content">
+                <h2 id="selectedPackageName"></h2>
+                <div class="package-price-modal" id="selectedPackagePrice"></div>
+                <p>تم اختيار الباقة بنجاح! سيتواصل معك فريق الدعم خلال 24 ساعة.</p>
+                <button class="btn btn-primary" onclick="confirmPackageSelection()">تأكيد الاختيار</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/packages.js"></script>
+</body>
+</html>

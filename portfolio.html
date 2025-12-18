@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الأعمال - GraphiZone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="https://i.ibb.co/S7WNsj3F/logo1.png" alt="GraphiZone Logo" style="width: 50px; height: auto;" />
+                    <div class="logo-text">GraphiZone</div>
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="packages.html">الباقات</a></li>
+                <li><a href="portfolio.html" class="active">المعرض</a></li>
+                <li><a href="index.html#how-it-works">كيفية العمل</a></li>
+                <li><a href="index.html#contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="auth-buttons">
+                <div class="user-welcome" id="userWelcome">
+                    مرحباً <span id="usernameDisplay"></span>
+                    <button class="btn btn-secondary" onclick="logout()">تسجيل الخروج</button>
+                </div>
+                <button class="btn btn-outline" onclick="showLoginModal()" id="loginBtn">تسجيل الدخول</button>
+                <button class="btn btn-primary" onclick="showRegisterModal()" id="registerBtn">إنشاء حساب</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- هيدر صفحة المعرض -->
+    <section class="page-header portfolio-header">
+        <div class="container">
+            <h1>معرض أعمالنا</h1>
+            <p>استعرض مجموعة من أروع تصاميمنا التي نفخر بها، اختر الفئة التي تناسبك</p>
+        </div>
+    </section>
+
+    <!-- فئات المعرض -->
+    <section class="portfolio-categories">
+        <div class="container">
+            <div class="categories-filter">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i> جميع الأعمال
+                </button>
+                <button class="filter-btn" data-filter="logos">
+                    <i class="fas fa-pen-nib"></i> تصميم الشعارات
+                </button>
+                <button class="filter-btn" data-filter="social">
+                    <i class="fas fa-hashtag"></i> وسائل التواصل
+                </button>
+                <button class="filter-btn" data-filter="identity">
+                    <i class="fas fa-palette"></i> الهوية البصرية
+                </button>
+                <button class="filter-btn" data-filter="branding">
+                    <i class="fas fa-crown"></i> براندنغ متكامل
+                </button>
+                <button class="filter-btn" data-filter="motion">
+                    <i class="fas fa-film"></i> موشن جرافيك
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- معرض الأعمال -->
+    <section class="portfolio-gallery">
+        <div class="container">
+            <div class="portfolio-grid">
+                <!-- تصميمات الشعارات -->
+                <div class="portfolio-item" data-category="logos">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=600&h=400&fit=crop" alt="شعار تقني">
+                        <div class="portfolio-overlay">
+                            <button class="view-btn" onclick="openPortfolioModal(1)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>شعار تقني حديث</h3>
+                        <p>تصميم شعار لشركة تقنية ناشئة</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">شعار</span>
+                            <span class="tag">تقني</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="logos">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1611262588019-db6cc2032da3?w=600&h=400&fit=crop" alt="شعار طبي">
+                        <div class="portfolio-overlay">
+                            <button class="view-btn" onclick="openPortfolioModal(2)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>شعار عيادة طبية</h3>
+                        <p>تصميم شعار لعيادة متخصصة</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">شعار</span>
+                            <span class="tag">طبي</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تصميمات وسائل التواصل -->
+                <div class="portfolio-item" data-category="social">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=600&h=400&fit=crop" alt="تصميم إنستقرام">
+                        <div class="portfolio-overlay">
+                            <button class="view-btn" onclick="openPortfolioModal(3)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>حملة إنستقرام</h3>
+                        <p>تصاميم متكاملة لحملة تسويقية</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">سوشيال ميديا</span>
+                            <span class="tag">إنستقرام</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="social">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop" alt="تصميم ستوري">
+                        <div class="portfolio-overlay">
+                            <button class="view-btn" onclick="openPortfolioModal(4)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>ستوريات تفاعلية</h3>
+                        <p>تصاميم ستوريات لعلامة تجارية</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">ستوري</span>
+                            <span class="tag">متحرك</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- هوية بصرية -->
+                <div class="portfolio-item" data-category="identity">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="هوية بصرية">
+                        <div class="portfolio-overlay">
+                            <button class="view-btn" onclick="openPortfolioModal(5)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>هوية بصرية كاملة</h3>
+                        <p>حزمة هوية بصرية لشركة عقارية</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">هوية بصرية</span>
+                            <span class="tag">براندنج</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- براندنغ متكامل -->
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" alt="براندنغ">
+                        <div class="portfolio-overlay">
+                            <button class="view-btn" onclick="openPortfolioModal(6)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>براندنغ متكامل</h3>
+                        <p>حزمة براندنغ شاملة لمطعم</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">براندنج</span>
+                            <span class="tag">متكامل</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- موشن جرافيك -->
+                <div class="portfolio-item" data-category="motion">
+                    <div class="portfolio-img">
+                        <div class="video-thumbnail">
+                            <i class="fas fa-play-circle"></i>
+                            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop" alt="موشن جرافيك">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <button class="view-btn" onclick="openVideoModal()">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>موشن جرافيك</h3>
+                        <p>فيديو موشن جرافيك إعلاني</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">فيديو</span>
+                            <span class="tag">متحرك</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- زر تحميل المزيد -->
+            <div class="load-more">
+                <button class="btn btn-outline" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i> عرض المزيد
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم إحصائيات -->
+    <section class="portfolio-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>+500</h3>
+                    <p>مشروع مكتمل</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-smile"></i>
+                    <h3>+200</h3>
+                    <p>عميل سعيد</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-award"></i>
+                    <h3>+50</h3>
+                    <p>جائزة وتكريم</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>5 أيام</h3>
+                    <p>متوسط وقت التسليم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم آراء العملاء -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">آراء عملائنا</h2>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"لقد تفاجأت بجودة التصميم والاحترافية في التعامل، شكراً GraphiZone"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="عميل">
+                        <div>
+                            <h4>أحمد محمد</h4>
+                            <p>مدير تسويق - شركة التقنية</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"الشعار الذي حصلت عليه يفوق توقعاتي، أنصح الجميع بالتعامل معهم"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="عميلة">
+                        <div>
+                            <h4>سارة عبدالله</h4>
+                            <p>مالكة علامة تجارية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم البدء بالمشروع -->
+    <section class="start-project">
+        <div class="container">
+            <div class="start-project-card">
+                <h2>مستعد لبدء مشروعك؟</h2>
+                <p>اطلب تصميمك الآن واحصل على نتائج احترافية</p>
+                <div class="project-buttons">
+                    <a href="packages.html" class="btn btn-primary">استعرض الباقات</a>
+                    <a href="index.html#contact" class="btn btn-outline">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GraphiZone</h3>
+                <p>منصة عربية متخصصة في ربط العملاء بالمصممين المحترفين</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="packages.html">الباقات</a></li>
+                    <li><a href="portfolio.html">المعرض</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p><i class="fas fa-envelope"></i> info@graphizone.com</p>
+                <p><i class="fas fa-phone"></i> +966 123 456 789</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>©️ 2025 GraphiZone. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- نافذة عرض الصورة -->
+    <div class="modal portfolio-modal" id="portfolioModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePortfolioModal()">×</span>
+            <div class="portfolio-modal-content">
+                <img id="portfolioModalImg" src="" alt="">
+                <div class="portfolio-modal-info">
+                    <h3 id="portfolioModalTitle"></h3>
+                    <p id="portfolioModalDesc"></p>
+                    <div class="portfolio-modal-tags" id="portfolioModalTags"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة الفيديو -->
+    <div class="modal video-modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideoModal()">×</span>
+            <div class="video-modal-content">
+                <iframe id="portfolioVideo" width="100%" height="500" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="عرض فيديو" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
+</body>
+</html>
